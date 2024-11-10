@@ -1,0 +1,26 @@
+
+services:
+      ansible:
+        container_name: ansible
+        image: ansible
+        tty: true
+        stdin_open: true
+        build:
+          context: ./
+        volumes:
+          - ./playbooks:/playbooks
+
+      remote-host-one:
+        container_name: remote-host-one
+        image: remote-host-ssh
+        build:
+          context: ./ssh-enabled-ubuntu
+
+      remote-host-web1:
+        container_name: remote-host-web1
+        image: remote-host-ssh
+        build:
+          context: ./ssh-enabled-ubuntu
+
+networks:
+      net:
