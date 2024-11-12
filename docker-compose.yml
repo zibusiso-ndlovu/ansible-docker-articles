@@ -33,6 +33,7 @@ services:
         image: remote-host-ssh
         build:
           context: ./ssh-enabled-ubuntu
+          
 
 networks:
       net:
