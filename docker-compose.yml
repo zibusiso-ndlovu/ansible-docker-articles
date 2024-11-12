@@ -22,5 +22,17 @@ services:
         build:
           context: ./ssh-enabled-ubuntu
 
+      remote-host-web2:
+        container_name: remote-host-web2
+        image: remote-host-ssh
+        build:
+          context: ./ssh-enabled-ubuntu
+
+      remote-host-web3:
+        container_name: remote-host-web3
+        image: remote-host-ssh
+        build:
+          context: ./ssh-enabled-ubuntu
+
 networks:
       net:
